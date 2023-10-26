@@ -12,17 +12,31 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OrganizeMe"
         tools:targetApi="31">
+<!--        <activity-->
+<!--            android:name=".OnBoarding"-->
+<!--            android:exported="true"-->
+<!--            android:theme="@style/Theme.OrganizeMe.MySplash">-->
+<!--        </activity>-->
         <activity
-            android:name=".MainActivity"
+            android:name=".OnBoarding"
             android:exported="true"
-            android:theme="@style/Theme.OrganizeMe.MySplash"
-            >
+            android:theme="@style/Theme.OrganizeMe.MySplash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:theme="@style/Theme.OrganizeMe">
+
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
