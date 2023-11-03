@@ -8,4 +8,6 @@
     <string name="first_slide_desc">Effortlessly manage your to-do list, deadlines, and priorities with OrganizeMe</string>
     <string name="second_slide_desc">Learn the art of time management with the Pomodoro Technique. Enhance your focus and productivity like never before.</string>
     <string name="third_slide_desc">Set due dates, and we\'ll make sure you never forget an important deadline again.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

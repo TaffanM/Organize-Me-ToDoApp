@@ -1,9 +1,8 @@
-package com.example.organizeme
+package com.example.organizeme.ui
 
-import SliderAdapter
+import com.example.organizeme.helper.SliderAdapter
 import android.content.Intent
 import android.os.Bundle
-import android.text.Html
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
@@ -16,8 +15,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.viewpager.widget.ViewPager
 import com.example.organizeme.R
-import com.google.android.material.progressindicator.BaseProgressIndicator
-import com.google.android.material.slider.Slider
+import com.example.organizeme.helper.DarkLightMode
 
 class OnBoarding : AppCompatActivity() {
     // variables
@@ -29,7 +27,7 @@ class OnBoarding : AppCompatActivity() {
     private lateinit var skipBtn: Button
     private lateinit var startBtn : Button
     private var animation: Animation? = null
-    private var currentPos = 0
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,16 +63,38 @@ class OnBoarding : AppCompatActivity() {
             ) {
 
             }
-
+            private var showAnimation = false
             override fun onPageSelected(position: Int) {
                 addDots(position)
+                animation = AnimationUtils.loadAnimation(this@OnBoarding, androidx.appcompat.R.anim.abc_fade_in)
+
 
                 when (position) {
-                    0,1 -> startBtn.visibility = View.INVISIBLE
+                    0 -> {
+                        startBtn.visibility = View.INVISIBLE
+                        skipBtn.visibility = View.VISIBLE
+                        nextBtn.visibility = View.VISIBLE
+                    }
+                    1 -> {
+                        if (showAnimation) {
+                            skipBtn.startAnimation(animation)
+                            nextBtn.startAnimation(animation)
+                            showAnimation = false
+                        }
+                        startBtn.visibility = View.INVISIBLE
+                        skipBtn.visibility = View.VISIBLE
+                        nextBtn.visibility = View.VISIBLE
+
+                    }
                     else -> {
-                        animation = AnimationUtils.loadAnimation(this@OnBoarding, androidx.appcompat.R.anim.abc_popup_enter)
-                        startBtn.startAnimation(animation)
+                        if (position >= 2) {
+                            startBtn.startAnimation(animation)
+                            showAnimation = true
+                        }
+
                         startBtn.visibility = View.VISIBLE
+                        skipBtn.visibility = View.INVISIBLE
+                        nextBtn.visibility = View.INVISIBLE
                     }
                 }
             }

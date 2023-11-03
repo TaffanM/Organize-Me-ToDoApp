@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/Theme.OrganizeMe"
-    tools:context=".OnBoarding">
+    tools:context=".ui.OnBoarding">
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/slider"
@@ -37,6 +37,7 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/nextBtn"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -65,24 +66,26 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/startBtn"
-            android:layout_width="wrap_content"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="100dp"
-            android:layout_marginTop="67dp"
+            android:layout_marginStart="35dp"
             android:layout_marginEnd="35dp"
+            android:layout_marginTop="67dp"
             android:layout_marginBottom="35dp"
-            android:gravity="center"
-            android:visibility="invisible"
-            android:text="Let's Get Started ➔"
-            android:padding="10dp"
             android:background="@drawable/custom_button_start"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Let's Get Started ➔"
+            android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textAllCaps="false" />
+            android:visibility="invisible" />
 
 
-        
+
 
 
     </RelativeLayout>

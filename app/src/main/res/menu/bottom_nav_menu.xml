@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navHome"
+        android:title=""
+        android:icon="@drawable/round_home_24"
+        />
+
+    <item
+        android:id="@+id/navList"
+        android:title=""
+        android:icon="@drawable/round_format_list_bulleted_24"
+        />
+
+    <item
+        android:id="@+id/placeholder"
+        android:title=""/>
+
+    <item
+        android:id="@+id/navTime"
+        android:title=""
+        android:icon="@drawable/round_timer_24"
+        />
+
+    <item
+        android:id="@+id/navProfile"
+        android:title=""
+        android:icon="@drawable/round_person_24"
+        />
+</menu>

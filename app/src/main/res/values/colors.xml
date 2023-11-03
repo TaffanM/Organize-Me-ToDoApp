@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
+    <color name="TextDarkLight">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="primaryColor">#7b2cbf</color>
+    <color name="primaryColorSec">#8a38D1</color>
     <color name="secondaryColor">#c77dff</color>
+    <color name="onBoardText">#3f3f3f</color>
     <color name="dark_100">#121212</color>
     <color name="dark_200">#282828</color>
     <color name="dark_300">#3f3f3f</color>
     <color name="mixed_100">#1d1621</color>
     <color name="mixed_200">#322b36</color>
     <color name="mixed_300">#48424c</color>
-
 </resources>
+
