@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="helper.ToDoNewTask">
+
+    <TextView
+        android:id="@+id/taskTitle"
+        style="@style/TextAppearance.AppCompat.Title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/comfortaa"
+        android:text="Create new task"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nameInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/taskTitle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/comfortaa"
+            android:hint="Name"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/dueDateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/comfortaa"
+        android:text="Due Date"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameInputLayout" />
+
+    <Button
+        android:id="@+id/calendarButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="0dp"
+        app:iconPadding="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="20dp"
+        app:iconTint = "@color/primaryColor"
+        android:textColor="@color/primaryColor"
+        app:strokeColor = "@android:color/transparent"
+        android:backgroundTint="#337b2cbf"
+        app:icon ="@drawable/round_calendar_month_24"
+        app:layout_constraintBottom_toTopOf="@+id/lineView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameInputLayout" />
+
+
+
+    <View
+        android:id="@+id/lineView2"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="12dp"
+        android:background="#c0c0c0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dueTimeText" />
+
+    <TextView
+        android:id="@+id/dueTimeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/comfortaa"
+        android:text="Due Time"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lineView" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/timerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="0dp"
+        app:iconPadding="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="20dp"
+        app:iconTint = "#f95a2c"
+        android:textColor="@color/primaryColor"
+        app:strokeColor = "@android:color/transparent"
+        android:backgroundTint="#33f95a2c"
+        app:icon ="@drawable/round_access_time_filled_24"
+        app:layout_constraintBottom_toTopOf="@+id/lineView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lineView" />
+
+    <View
+        android:id="@+id/lineView"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="12dp"
+        android:background="#c0c0c0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dueDateText" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/saveButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/primaryColor"
+        android:text="Done"
+        android:textColor="?colorOnPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lineView2" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="4dp"
+    app:cardCornerRadius="16dp"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:background="@drawable/bg_task">
+
+        <TextView
+            android:id="@+id/toDoTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/place_holder"
+            android:textColor="@color/white"
+            android:fontFamily="@font/montserrat_bold"
+            android:letterSpacing="0.02"
+            android:textSize="24dp"
+            />
+
+        <TextView
+            android:id="@+id/toDoClock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toDoTitle"
+            android:fontFamily="@font/montserrat"
+            android:letterSpacing="0.1"
+            android:layout_marginTop="5dp"
+            android:text="@string/place_holder"
+            android:textColor="@color/white"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/toDoDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toDoTitle"
+            android:layout_toRightOf="@+id/toDoClock"
+            android:fontFamily="@font/montserrat"
+            android:letterSpacing="0.1"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="5dp"
+            android:text="Monday"
+            android:textColor="@color/white"
+            android:textSize="12dp" />
+
+        <ImageView
+            android:id="@+id/toDoCalendarIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/round_calendar_month_24"
+            android:layout_below="@+id/toDoTitle"
+            android:layout_toRightOf="@+id/toDoDay"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="5dp"/>
+
+        <TextView
+            android:id="@+id/toDoDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toDoTitle"
+            android:layout_toRightOf="@+id/toDoCalendarIcon"
+            android:fontFamily="@font/montserrat"
+            android:letterSpacing="0.1"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:text="06-07-2023"
+            android:textColor="@color/white"
+            android:textSize="12dp" />
+
+        <CheckBox
+            android:id="@+id/toDoCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:buttonTint="@color/white"
+            android:layout_centerVertical="true"/>
+
+
+        
+        
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

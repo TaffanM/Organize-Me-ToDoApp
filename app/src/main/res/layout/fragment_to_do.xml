@@ -3,12 +3,66 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.ToDoFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="todo" />
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textDashboard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="To-do's"
+                android:fontFamily="@font/comfortaa"
+                android:textStyle="bold"
+                android:textSize="24sp"
+                android:textColor="@color/TextDarkLight"
+                android:letterSpacing="0.05"
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/taskRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"/>
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_gravity="center"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/notodo"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="Get started now and make things happen!"
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal"
+                android:visibility="visible"
+                />
+
+        </LinearLayout>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
 
 </FrameLayout>

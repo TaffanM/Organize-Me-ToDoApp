@@ -1,12 +1,26 @@
 package com.example.organizeme.fragment
 
+import android.animation.Animator
+import android.animation.AnimatorInflater
+import android.animation.AnimatorListenerAdapter
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
+import android.animation.ValueAnimator
 import android.graphics.Color
+import android.graphics.Paint
 import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.style.StrikethroughSpan
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation.AnimationListener
+import android.widget.CheckBox
 import android.widget.TextView
 import com.example.organizeme.R
 
@@ -38,9 +52,41 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val _view = inflater.inflate(R.layout.fragment_home, container, false)
+        val firstCheck = _view.findViewById<CheckBox>(R.id.firstCheck)
+        val secondCheck = _view.findViewById<CheckBox>(R.id.secondCheck)
+        val thirdCheck = _view.findViewById<CheckBox>(R.id.thirdCheck)
+        val fourthCheck = _view.findViewById<CheckBox>(R.id.fourthCheck)
+
+        firstCheck.setOnCheckedChangeListener { buttonView, isChecked ->
+            applyStrikethrough(firstCheck, isChecked)
+        }
+
+        secondCheck.setOnCheckedChangeListener { buttonView, isChecked ->
+            applyStrikethrough(secondCheck, isChecked)
+        }
+
+        thirdCheck.setOnCheckedChangeListener { buttonView, isChecked ->
+            applyStrikethrough(thirdCheck, isChecked)
+        }
+
+        fourthCheck.setOnCheckedChangeListener { buttonView, isChecked ->
+            applyStrikethrough(fourthCheck, isChecked)
+        }
+
 
         // Inflate the layout for this fragment
         return _view
+    }
+
+
+
+    private fun applyStrikethrough(checkBox: CheckBox, isChecked: Boolean){
+        val paint = checkBox.paintFlags
+        if (isChecked){
+            checkBox.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG or paint
+        } else {
+            checkBox.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG.inv() and paint
+        }
     }
 
     companion object {

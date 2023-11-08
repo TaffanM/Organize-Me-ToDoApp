@@ -3,6 +3,7 @@
     <array name="preloaded_fonts" translatable="false">
         <item>@font/chivo</item>
         <item>@font/comfortaa</item>
+        <item>@font/montserrat</item>
         <item>@font/montserrat_bold</item>
         <item>@font/montserrat_extrabold</item>
     </array>

@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.storage.CacheResetOnProcessCanceled.enabled
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -27,6 +29,12 @@ android {
             )
         }
     }
+
+    buildFeatures {
+        dataBinding = true
+        viewBinding = true
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -38,6 +46,8 @@ android {
 
 dependencies {
 
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
+    implementation("com.airbnb.android:lottie:6.1.0")
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.10.0")
