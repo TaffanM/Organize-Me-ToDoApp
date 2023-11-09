@@ -13,9 +13,18 @@
         android:theme="@style/Theme.OrganizeMe"
         tools:targetApi="31">
         <activity
-            android:name=".ui.LoginActivity"
+            android:name=".ui.DevActivity"
             android:exported="false" />
-        <!-- <activity -->
+        <activity
+            android:name=".ui.BmiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.SettingsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_settings" />
+        <activity
+            android:name=".ui.LoginActivity"
+            android:exported="false" /> <!-- <activity -->
         <!-- android:name=".OnBoarding" -->
         <!-- android:exported="true" -->
         <!-- android:theme="@style/Theme.OrganizeMe.MySplash"> -->
@@ -33,9 +42,7 @@
         <activity
             android:name=".ui.MainActivity"
             android:exported="false"
-            android:theme="@style/Theme.OrganizeMe">
-
-        </activity>
+            android:theme="@style/Theme.OrganizeMe" />
 
         <meta-data
             android:name="preloaded_fonts"

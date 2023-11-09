@@ -7,7 +7,7 @@
             android:thicknessRatio="30.0"
             android:useLevel="false">
             <solid
-                android:color="@color/onBoardText"/>
+                android:color="@color/progressBar"/>
         </shape>
     </item>
 </layer-list>

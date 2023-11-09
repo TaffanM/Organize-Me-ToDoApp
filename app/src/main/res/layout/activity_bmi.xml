@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.BmiActivity">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/backBmiBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="20dp"
+        android:minWidth="0dp"
+        android:padding="5dp"
+        app:iconPadding="0dp"
+        app:iconTint = "@color/TextDarkLight"
+        app:iconSize="36dp"
+        app:strokeColor = "@android:color/transparent"
+        android:backgroundTint="@android:color/transparent"
+        app:icon ="@drawable/round_arrow_back_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <LinearLayout
+        android:id="@+id/weightHeight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/backBmiBtn">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/weighText"
+                android:textColor="@color/TextDarkLight"
+                android:textStyle="bold"
+                android:textSize="26sp"
+                android:fontFamily="@font/comfortaa"
+                android:layout_gravity="center"
+                android:text="Weight"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/weighEdit"
+                android:textSize="26sp"
+                android:hint="Kg"
+                android:fontFamily="@font/comfortaa"
+                android:layout_marginEnd="6dp"
+                android:textAlignment="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/heightText"
+                android:textColor="@color/TextDarkLight"
+                android:textStyle="bold"
+                android:textSize="26sp"
+                android:fontFamily="@font/comfortaa"
+                android:layout_gravity="center"
+                android:text="Height"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/heightEdit"
+                android:textSize="26sp"
+                android:hint="cm"
+                android:fontFamily="@font/comfortaa"
+                android:layout_marginEnd="6dp"
+                android:textAlignment="center"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/calcButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/primaryColor"
+        android:text="Calculate BMI"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerBmi" />
+
+    <TextView
+        android:id="@+id/textResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/TextDarkLight"
+        android:textSize="26sp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/comfortaa"
+        android:text=""
+        app:layout_constraintTop_toBottomOf="@+id/calcButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <Spinner
+        android:id="@+id/spinnerBmi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:spinnerMode="dialog"
+        app:layout_constraintTop_toBottomOf="@+id/weightHeight"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

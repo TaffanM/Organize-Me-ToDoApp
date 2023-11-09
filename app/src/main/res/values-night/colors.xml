@@ -2,4 +2,7 @@
 <resources>
     <color name="onBoardText">#FFFFFF</color>
     <color name="TextDarkLight">#FFFFFF</color>
+    <color name="TextLightDark">#000000</color>
+    <color name="PanelDark">#1d1621</color>
+    <color name="progressBar">#1aFFFFFF</color>
 </resources>

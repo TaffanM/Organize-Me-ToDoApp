@@ -75,13 +75,17 @@ class ToDoNewTask(var taskItem: TaskItem?) : BottomSheetDialogFragment() {
     }
 
     private fun openTimePicker(){
-        if(dueTime == null)
+        if(dueTime == null) {
             dueTime = LocalTime.now()
-            val listenerTime = TimePickerDialog.OnTimeSetListener { _, selectedHour, selectedMinute -> dueTime = LocalTime.of(selectedHour, selectedMinute)
+            val listenerTime =
+                TimePickerDialog.OnTimeSetListener { _, selectedHour, selectedMinute ->
+                    dueTime = LocalTime.of(selectedHour, selectedMinute)
+                }
+            val dialog =
+                TimePickerDialog(activity, listenerTime, dueTime!!.hour, dueTime!!.minute, true)
+            dialog.setTitle("Task due")
+            dialog.show()
         }
-        val dialog = TimePickerDialog(activity, listenerTime, dueTime!!.hour, dueTime!!.minute, true)
-        dialog.setTitle("Task due")
-        dialog.show()
     }
 
     private fun openDatePicker() {
@@ -97,7 +101,6 @@ class ToDoNewTask(var taskItem: TaskItem?) : BottomSheetDialogFragment() {
                 dueDate!!.year,
                 dueDate!!.monthValue,
                 dueDate!!.dayOfMonth
-
             )
             dialog.setTitle("Deadline date")
             dialog.show()

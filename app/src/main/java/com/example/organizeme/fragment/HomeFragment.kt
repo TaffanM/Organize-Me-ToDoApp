@@ -6,6 +6,7 @@ import android.animation.AnimatorListenerAdapter
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.drawable.GradientDrawable
@@ -23,6 +24,9 @@ import android.view.animation.Animation.AnimationListener
 import android.widget.CheckBox
 import android.widget.TextView
 import com.example.organizeme.R
+import com.example.organizeme.ui.BmiActivity
+import com.example.organizeme.ui.DevActivity
+import com.google.android.material.button.MaterialButton
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -56,6 +60,18 @@ class HomeFragment : Fragment() {
         val secondCheck = _view.findViewById<CheckBox>(R.id.secondCheck)
         val thirdCheck = _view.findViewById<CheckBox>(R.id.thirdCheck)
         val fourthCheck = _view.findViewById<CheckBox>(R.id.fourthCheck)
+        val buttonBMI = _view.findViewById<MaterialButton>(R.id.bmiBtn)
+        val buttonDevProfile = _view.findViewById<MaterialButton>(R.id.profileDevBtn)
+
+        buttonBMI.setOnClickListener {
+            val intent = Intent(requireContext(), BmiActivity::class.java)
+            startActivity(intent)
+        }
+
+        buttonDevProfile.setOnClickListener {
+            val intent = Intent(requireContext(), DevActivity::class.java)
+            startActivity(intent)
+        }
 
         firstCheck.setOnCheckedChangeListener { buttonView, isChecked ->
             applyStrikethrough(firstCheck, isChecked)

@@ -123,7 +123,7 @@ class OnBoarding : AppCompatActivity() {
     private fun addDots(position: Int) {
         dotsLayout.removeAllViews()
 
-        val numPages = 3 // Replace with the actual number of pages
+        val numPages = 3
 
         // initialize dots array
         dots = Array(numPages) { null }

@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.organizeme.R
+import android.util.Log
 import com.example.organizeme.databinding.ActivityMainBinding
 import com.example.organizeme.databinding.FragmentToDoBinding
 import com.example.organizeme.databinding.TaskLayoutBinding
@@ -16,6 +17,7 @@ import com.example.organizeme.fragment.HomeFragment
 import com.example.organizeme.fragment.PomodoroFragment
 import com.example.organizeme.fragment.ProfileFragment
 import com.example.organizeme.fragment.ToDoFragment
+import com.example.organizeme.helper.SharedViewModel
 import com.example.organizeme.helper.TaskItemAdapter
 import com.example.organizeme.helper.ToDoModel
 import com.example.organizeme.helper.ToDoNewTask
@@ -25,20 +27,20 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: FragmentToDoBinding
     private lateinit var taskViewModel: ToDoModel
+    private lateinit var sharedViewModel: SharedViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setupWindowFeatures()
-
         // actionBar?.show() // Remove this line if you want to show the action bar
         setContentView(R.layout.activity_main)
 
         binding = FragmentToDoBinding.inflate(layoutInflater)
+        sharedViewModel = ViewModelProvider(this).get(SharedViewModel::class.java)
 
         setupBottomNavigation()
         setupFloatingActionButton()
         loadFragment(HomeFragment())
-
         taskViewModel = ViewModelProvider(this).get(ToDoModel::class.java)
         setRecyclerView()
     }
@@ -49,6 +51,8 @@ class MainActivity : AppCompatActivity() {
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
         window.statusBarColor = Color.TRANSPARENT
     }
+
+
 
     private fun setupBottomNavigation() {
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottomNavBar)
@@ -63,6 +67,7 @@ class MainActivity : AppCompatActivity() {
             true
         }
     }
+
 
     private fun setupFloatingActionButton() {
         val fab = findViewById<FloatingActionButton>(R.id.fab)

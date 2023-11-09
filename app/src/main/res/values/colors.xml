@@ -2,6 +2,9 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="TextDarkLight">#FF000000</color>
+    <color name="TextLightDark">#FFFFFFFF</color>
+    <color name="PanelDark">#fdfdfd</color>
+    <color name="progressBar">#1a000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="primaryColor">#7b2cbf</color>
     <color name="primaryColorSec">#8a38D1</color>
